@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PB Skydiving — The Plan</title>
+<meta name="description" content="A new dropzone on the Wisconsin–Illinois border, drawn in crayon because it's still a dream." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Kalam:wght@300;400;700&family=Gochi+Hand&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- SVG filters used site-wide for crayon roughening -->
+<svg class="global-filters" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/>
+    </filter>
+    <filter id="rough-hard" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5"/>
+    </filter>
+    <filter id="crayon-texture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="tex"/>
+      <feColorMatrix in="tex" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.35 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode/>
+      </feMerge>
+    </filter>
+    <!-- paper noise for body bg -->
+    <filter id="paper-noise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="1"/>
+      <feColorMatrix values="0 0 0 0 0.15  0 0 0 0 0.11  0 0 0 0 0.05  0 0 0 0.08 0"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- paper texture backdrop -->
+<div class="paper-bg" aria-hidden="true">
+  <svg width="100%" height="100%" preserveAspectRatio="none">
+    <rect width="100%" height="100%" filter="url(#paper-noise)"/>
+  </svg>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-mark">
+        <svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 4 L34 34 L20 28 L6 34 Z" stroke="#d64545" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" filter="url(#rough)"/>
+          <circle cx="20" cy="20" r="2.5" fill="#2b2318"/>
+        </svg>
+      </span>
+      <span class="brand-word">PB Skydiving</span>
+    </a>
+    <div class="nav-links">
+      <a href="#plan">the plan</a>
+      <a href="#stuff">cool stuff</a>
+      <a href="#map">the map</a>
+      <a href="#where">where</a>
+      <a href="#contact" class="nav-cta">say hi</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow"><span class="star">★</span> coming soon · wi/il border <span class="star">★</span></p>
+    <h1 class="hero-headline">
+      we're building a <span class="scribble-red">dropzone</span>,<br/>
+      and it's gonna be<br/>
+      <span class="scribble-blue">really</span> <span class="wave">cool</span>.
+    </h1>
+    <p class="hero-sub">
+      balloons. rotorcraft. skyvans. a wingsuit wind tunnel. a 5,600-foot runway. a swoop pond. open in winter because we're tough. it's a lot.
+    </p>
+    <div class="hero-ctas">
+      <a href="#plan" class="btn btn-primary">read the plan →</a>
+      <a href="#map" class="btn btn-ghost">see the drawing</a>
+    </div>
+
+    <div class="tape tape-1"></div>
+    <div class="tape tape-2"></div>
+  </div>
+</header>
+
+<section id="plan" class="section">
+  <div class="section-head">
+    <p class="section-tag">part 1 — the idea</p>
+    <h2 class="section-title">the <span class="scribble-green">midwest's mecca</span> for exotic aircraft jumps.</h2>
+  </div>
+  <div class="prose">
+    <p>
+      the whole point of this dz is to be the place experienced jumpers travel <em>to</em>, not the one they put up with. that means a runway long enough for turbine stuff — skyvans, dc-3s, helicopters, hot air balloons, whatever shows up.
+    </p>
+    <p>
+      the runway at perris is <strong>500 feet shorter</strong> than what we're planning, and they land a dc9 on it. we should be fine.
+    </p>
+    <p>
+      and then the big draw: a <strong>wingsuit wind tunnel</strong>. barely any of those exist in the us. plus a normal tunnel next to it for everyone else.
+    </p>
+    <p class="footnote">
+      ps — the exact location is still tbd. the map below is the dream version with all the good stuff built.
+    </p>
+  </div>
+</section>
+
+<section id="stuff" class="section section-warm">
+  <div class="section-head section-head-center">
+    <p class="section-tag">part 2 — the cool stuff</p>
+    <h2 class="section-title">what makes this one <span class="scribble-orange">different</span>.</h2>
+  </div>
+
+  <div class="stuff-grid">
+    <article class="stuff stuff-red">
+      <p class="stuff-num">1</p>
+      <h3>exotic aircraft</h3>
+      <p>balloons, rotorcraft, skyvans. the 5,600' runway exists so we can actually host this stuff.</p>
+    </article>
+
+    <article class="stuff stuff-blue">
+      <p class="stuff-num">2</p>
+      <h3>wingsuit tunnel</h3>
+      <p>the single biggest pull for experienced jumpers. almost nobody else has one.</p>
+    </article>
+
+    <article class="stuff stuff-green">
+      <p class="stuff-num">3</p>
+      <h3>normal tunnel too</h3>
+      <p>right next to the wingsuit one. freefly, formations, tandem add-ons, aff students.</p>
+    </article>
+
+    <article class="stuff stuff-yellow">
+      <p class="stuff-num">4</p>
+      <h3>sunrise jumps</h3>
+      <p>weekend first-light loads. get up early, watch the sun come up from under canopy.</p>
+    </article>
+
+    <article class="stuff stuff-purple">
+      <p class="stuff-num">5</p>
+      <h3>open in winter</h3>
+      <p>select days. we are not pussies.</p>
+    </article>
+
+    <article class="stuff stuff-orange">
+      <p class="stuff-num">6</p>
+      <h3>jumper lodging</h3>
+      <p>across the runway from manifest so tandem customers don't have to see the degeneracy.</p>
+    </article>
+
+    <article class="stuff stuff-red">
+      <p class="stuff-num">7</p>
+      <h3>swoop pond + shr</h3>
+      <p>dedicated landing area for swoopers and high-performance canopies, with its own pond.</p>
+    </article>
+
+    <article class="stuff stuff-blue">
+      <p class="stuff-num">8</p>
+      <h3>rv + campground</h3>
+      <p>pull up, plug in, stay the whole weekend. boogies welcome.</p>
+    </article>
+
+    <article class="stuff stuff-green">
+      <p class="stuff-num">9</p>
+      <h3>lake michigan!!</h3>
+      <p>jetski rentals. maybe parasailing. marina's right there in case of a water landing.</p>
+    </article>
+  </div>
+</section>
+
+<section id="map" class="section section-map">
+  <div class="section-head section-head-center">
+    <p class="section-tag">part 3 — the drawing</p>
+    <h2 class="section-title">the <span class="scribble-red">dream</span> layout.</h2>
+    <p class="lede lede-center">
+      everything in one place. not to scale. probably not to code. but that's the idea.
+    </p>
+  </div>
+
+  <div class="map-paper">
+    <div class="map-tape map-tape-tl"></div>
+    <div class="map-tape map-tape-tr"></div>
+    <div class="map-tape map-tape-bl"></div>
+    <div class="map-tape map-tape-br"></div>
+
+    <svg viewBox="0 0 1000 700" class="sitemap" role="img" aria-labelledby="mapTitle mapDesc" preserveAspectRatio="xMidYMid meet">
+      <title id="mapTitle">PB Skydiving crayon-drawn site map</title>
+      <desc id="mapDesc">A hand-drawn map showing a north-south runway, landing areas, lodging, wind tunnel, swoop pond, and Lake Michigan.</desc>
+
+      <defs>
+        <filter id="map-rough" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="5" result="noise"/>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="4"/>
+        </filter>
+        <filter id="map-rough-hi" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="2" result="noise"/>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="6"/>
+        </filter>
+        <pattern id="lake-scribble" patternUnits="userSpaceOnUse" width="60" height="40">
+          <path d="M0 20 Q15 12 30 20 T60 20" stroke="#3a7bc8" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        </pattern>
+        <pattern id="grass-scribble" patternUnits="userSpaceOnUse" width="30" height="30">
+          <path d="M5 25 L7 18 M12 28 L14 20 M20 26 L22 17 M26 28 L28 22" stroke="#4aa34a" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        </pattern>
+      </defs>
+
+      <!-- paper-colored background for the map area -->
+      <rect x="0" y="0" width="1000" height="700" fill="#fbf3dc"/>
+
+      <!-- lake fill (scribbled blue) -->
+      <g filter="url(#map-rough)">
+        <path d="M620 0 L1000 0 L1000 700 L710 700 L690 620 L670 540 L655 450 L640 360 L618 260 L625 120 L620 0 Z"
+              fill="#3a7bc8" opacity="0.25"/>
+        <path d="M620 0 L1000 0 L1000 700 L710 700 L690 620 L670 540 L655 450 L640 360 L618 260 L625 120 L620 0 Z"
+              fill="url(#lake-scribble)" opacity="0.8"/>
+      </g>
+
+      <!-- grass fill on land -->
+      <g filter="url(#map-rough)">
+        <rect x="40" y="40" width="540" height="620" fill="#4aa34a" opacity="0.12"/>
+        <rect x="40" y="40" width="540" height="620" fill="url(#grass-scribble)" opacity="0.6"/>
+      </g>
+
+      <!-- property boundary - wavy red dashed crayon line -->
+      <g filter="url(#map-rough-hi)">
+        <rect x="40" y="40" width="540" height="620" fill="none"
+              stroke="#d64545" stroke-width="3.5" stroke-dasharray="14,8" stroke-linecap="round"/>
+      </g>
+
+      <!-- runway - big black crayon rectangle -->
+      <g filter="url(#map-rough)">
+        <rect x="180" y="60" width="60" height="580" fill="#2b2318" stroke="#000" stroke-width="2"/>
+      </g>
+      <!-- runway dashed centerline -->
+      <g filter="url(#map-rough)">
+        <line x1="210" y1="80" x2="210" y2="620" stroke="#fdf6dd" stroke-width="3" stroke-dasharray="18,14" stroke-linecap="round"/>
+      </g>
+
+      <!-- runway numbers -->
+      <g font-family="Gochi Hand, cursive" fill="#fdf6dd" text-anchor="middle">
+        <text x="210" y="90" font-size="24" transform="rotate(180 210 82)">34</text>
+        <text x="210" y="638" font-size="24">16</text>
+      </g>
+
+      <!-- runway length label -->
+      <text x="152" y="360" font-family="Caveat, cursive" font-size="22" font-weight="700" fill="#2b2318"
+            text-anchor="middle" transform="rotate(-90 152 360)">
+        5,600 ft asphalt runway
+      </text>
+
+      <!-- tandem landing area -->
+      <g filter="url(#map-rough)">
+        <rect x="250" y="60" width="320" height="120" fill="#a8d4a8" stroke="#4aa34a" stroke-width="3" stroke-linejoin="round" opacity="0.7"/>
+      </g>
+      <g font-family="Gochi Hand, cursive" text-anchor="middle">
+        <text x="410" y="110" font-size="24" fill="#2b2318">Tandem &amp; VP</text>
+        <text x="410" y="138" font-size="18" fill="#2b2318">landing area</text>
+      </g>
+
+      <!-- aircraft hangar -->
+      <g filter="url(#map-rough)">
+        <rect x="250" y="200" width="140" height="55" fill="#c8c4b8" stroke="#2b2318" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <text x="320" y="234" text-anchor="middle" font-family="Gochi Hand, cursive" font-size="17" fill="#2b2318">aircraft hangar</text>
+
+      <!-- manifest - yellow crayon -->
+      <g filter="url(#map-rough)">
+        <rect x="410" y="200" width="90" height="55" fill="#f2c94c" stroke="#2b2318" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <text x="455" y="237" text-anchor="middle" font-family="Gochi Hand, cursive" font-size="22" fill="#2b2318">MANIFEST</text>
+
+      <!-- parking -->
+      <g filter="url(#map-rough)">
+        <rect x="515" y="200" width="55" height="55" fill="#e8e2d5" stroke="#2b2318" stroke-width="3"/>
+      </g>
+      <text x="542" y="242" text-anchor="middle" font-family="Gochi Hand, cursive" font-size="32" fill="#2b2318">P</text>
+
+      <!-- wind tunnel -->
+      <g filter="url(#map-rough)">
+        <rect x="360" y="275" width="130" height="55" fill="#f4b8e4" stroke="#c34a94" stroke-width="3" stroke-linejoin="round" opacity="0.8"/>
+        <circle cx="425" cy="302" r="12" fill="none" stroke="#c34a94" stroke-width="2.5"/>
+        <circle cx="425" cy="302" r="5" fill="#c34a94"/>
+      </g>
+      <text x="425" y="355" text-anchor="middle" font-family="Gochi Hand, cursive" font-size="18" fill="#2b2318">WIND TUNNEL</text>
+
+      <!-- RV parking (yellow rectangles) -->
+      <g filter="url(#map-rough)">
+        <rect x="60" y="200" width="100" height="12" fill="#f2c94c" stroke="#2b2318" stroke-width="2"/>
+        <rect x="60" y="218" width="100" height="12" fill="#f2c94c" stroke="#2b2318" stroke-width="2"/>
+        <rect x="60" y="236" width="100" height="12" fill="#f2c94c" stroke="#2b2318" stroke-width="2"/>
+        <rect x="60" y="254" width="100" height="12" fill="#f2c94c" stroke="#2b2318" stroke-width="2"/>
+      </g>
+      <text x="110" y="192" text-anchor="middle" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#2b2318">RV parking &amp; campground</text>
+
+      <!-- lodging - little houses -->
+      <g filter="url(#map-rough)">
+        <g fill="#d9a066" stroke="#2b2318" stroke-width="2">
+          <path d="M60 290 L60 305 L78 305 L78 290 L69 282 Z"/>
+          <path d="M82 290 L82 305 L100 305 L100 290 L91 282 Z"/>
+          <path d="M104 290 L104 305 L122 305 L122 290 L113 282 Z"/>
+          <path d="M126 290 L126 305 L144 305 L144 290 L135 282 Z"/>
+        </g>
+      </g>
+      <text x="102" y="325" text-anchor="middle" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#2b2318">lodging</text>
+
+      <!-- training pond -->
+      <g filter="url(#map-rough)">
+        <ellipse cx="130" cy="365" rx="42" ry="20" fill="#3a7bc8" stroke="#2b2318" stroke-width="2.5" opacity="0.75"/>
+      </g>
+      <text x="130" y="370" text-anchor="middle" font-family="Caveat, cursive" font-size="16" font-weight="600" fill="#fdf6dd">pond (for fun)</text>
+      <text x="130" y="402" text-anchor="middle" font-family="Caveat, cursive" font-size="14" font-weight="400" fill="#2b2318" font-style="italic">+ water training</text>
+
+      <!-- do not land past this line -->
+      <g filter="url(#map-rough)">
+        <line x1="50" y1="428" x2="170" y2="428" stroke="#d64545" stroke-width="2.5" stroke-dasharray="5,5" stroke-linecap="round"/>
+      </g>
+      <text x="110" y="422" text-anchor="middle" font-family="Caveat, cursive" font-size="13" font-weight="700" fill="#d64545">do NOT land past this line!!</text>
+
+      <!-- general landing area label -->
+      <text x="110" y="530" text-anchor="middle" font-family="Gochi Hand, cursive" font-size="26" fill="#2b2318">GENERAL</text>
+      <text x="110" y="555" text-anchor="middle" font-family="Gochi Hand, cursive" font-size="26" fill="#2b2318">LANDING</text>
+      <text x="110" y="580" text-anchor="middle" font-family="Gochi Hand, cursive" font-size="26" fill="#2b2318">AREA</text>
+
+      <!-- pea pit -->
+      <g filter="url(#map-rough)">
+        <circle cx="110" cy="610" r="9" fill="#c8c4b8" stroke="#2b2318" stroke-width="2"/>
+      </g>
+      <text x="140" y="614" font-family="Caveat, cursive" font-size="16" font-weight="600" fill="#2b2318">pea pit</text>
+
+      <!-- S.H.R. landing area -->
+      <g filter="url(#map-rough)">
+        <rect x="250" y="360" width="320" height="280" fill="#a8d4a8" stroke="#4aa34a" stroke-width="3" stroke-linejoin="round" opacity="0.7"/>
+      </g>
+      <g font-family="Gochi Hand, cursive" text-anchor="middle">
+        <text x="410" y="425" font-size="44" fill="#d64545">S.H.R.</text>
+        <text x="410" y="450" font-size="14" fill="#2b2318" font-style="italic" font-family="Caveat, cursive">(swoopers, high-performance, retards)</text>
+        <text x="410" y="478" font-size="20" fill="#2b2318">landing area</text>
+      </g>
+
+      <!-- swoop pond -->
+      <g filter="url(#map-rough)">
+        <rect x="388" y="540" width="44" height="80" fill="#3a7bc8" stroke="#2b2318" stroke-width="2.5" opacity="0.8"/>
+      </g>
+      <text x="410" y="635" text-anchor="middle" font-family="Caveat, cursive" font-size="16" font-weight="700" fill="#2b2318">swoop pond</text>
+
+      <!-- marina -->
+      <g transform="translate(720, 560)" filter="url(#map-rough)">
+        <rect x="0" y="0" width="80" height="60" fill="#8b5a2b" stroke="#2b2318" stroke-width="2.5"/>
+        <line x1="10" y1="8" x2="10" y2="55" stroke="#2b2318" stroke-width="1.5"/>
+        <line x1="25" y1="8" x2="25" y2="55" stroke="#2b2318" stroke-width="1.5"/>
+        <line x1="40" y1="8" x2="40" y2="55" stroke="#2b2318" stroke-width="1.5"/>
+        <line x1="55" y1="8" x2="55" y2="55" stroke="#2b2318" stroke-width="1.5"/>
+        <line x1="70" y1="8" x2="70" y2="55" stroke="#2b2318" stroke-width="1.5"/>
+        <line x1="5" y1="30" x2="75" y2="30" stroke="#2b2318" stroke-width="1.5"/>
+      </g>
+      <text x="760" y="645" text-anchor="middle" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#2b2318">marina</text>
+
+      <!-- annotation: close access -->
+      <g font-family="Caveat, cursive" fill="#d64545" font-weight="700">
+        <text x="820" y="450" font-size="17">close access to</text>
+        <text x="820" y="470" font-size="17">marina in case</text>
+        <text x="820" y="490" font-size="17">of a water landing!</text>
+      </g>
+      <g filter="url(#map-rough-hi)">
+        <path d="M 820 500 Q 795 525 775 555" stroke="#d64545" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <polygon points="775,555 768,548 773,560" fill="#d64545"/>
+      </g>
+
+      <!-- LAKE MICHIGAN label -->
+      <g font-family="Gochi Hand, cursive" fill="#3a7bc8">
+        <text x="830" y="130" font-size="58">LAKE</text>
+        <text x="830" y="190" font-size="58">MICHIGAN</text>
+      </g>
+
+      <!-- state line -->
+      <g filter="url(#map-rough)">
+        <line x1="0" y1="680" x2="1000" y2="680" stroke="#d64545" stroke-width="2" stroke-dasharray="4,4" stroke-linecap="round"/>
+      </g>
+      <text x="870" y="673" font-family="Gochi Hand, cursive" font-size="18" fill="#d64545">WISCONSIN</text>
+      <text x="870" y="697" font-family="Gochi Hand, cursive" font-size="18" fill="#d64545">ILLINOIS</text>
+
+      <!-- north arrow -->
+      <g transform="translate(920, 620)">
+        <g filter="url(#map-rough)">
+          <circle r="24" fill="#fdf6dd" stroke="#2b2318" stroke-width="2.5"/>
+          <polygon points="0,-16 7,6 0,1 -7,6" fill="#d64545" stroke="#2b2318" stroke-width="1.5"/>
+        </g>
+        <text y="-28" text-anchor="middle" font-family="Gochi Hand, cursive" font-size="20" fill="#2b2318">N</text>
+      </g>
+
+      <!-- some extra scribble clouds for charm -->
+      <g stroke="#2b2318" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.5" filter="url(#map-rough)">
+        <path d="M700 50 q10 -12 22 0 q12 -10 22 4 q10 -4 12 8 q-4 10 -14 8 q-10 6 -22 -2 q-12 6 -20 -4 q-10 -4 0 -14 z"/>
+        <path d="M920 350 q8 -10 18 0 q10 -8 18 4 q8 -4 10 6 q-4 8 -12 6 q-8 5 -18 -2 q-10 5 -16 -4 q-8 -3 0 -10 z"/>
+      </g>
+    </svg>
+  </div>
+
+  <p class="map-caption">figure 1 — drawn on a napkin, ported to crayon.</p>
+</section>
+
+<section id="where" class="section">
+  <div class="section-head">
+    <p class="section-tag">part 4 — where</p>
+    <h2 class="section-title">right on <span class="scribble-blue">lake michigan</span>.</h2>
+  </div>
+  <div class="prose">
+    <p>
+      somewhere along the wisconsin/illinois border. close enough to chicago (~90 min) and milwaukee (~30 min) that people can actually come. lake's right there. the views are gonna be stupid.
+    </p>
+    <p>
+      the airspace situation: we're just outside of o'hare class b, which is great. the one catch is that some eastbound flights to europe pass directly overhead with only a couple hundred feet of vertical clearance. gotta work that out with the faa.
+    </p>
+  </div>
+
+  <ul class="fact-list">
+    <li><span class="fact-key">chicago</span><span class="fact-val">~90 minutes away</span></li>
+    <li><span class="fact-key">milwaukee</span><span class="fact-val">~30 minutes away</span></li>
+    <li><span class="fact-key">runway</span><span class="fact-val">5,600' of asphalt</span></li>
+    <li><span class="fact-key">airspace</span><span class="fact-val">class E (outside o'hare B)</span></li>
+    <li><span class="fact-key">water</span><span class="fact-val">lake michigan, training pond, swoop pond</span></li>
+    <li><span class="fact-key">season</span><span class="fact-val">year-round (yes, winter too)</span></li>
+  </ul>
+</section>
+
+<section id="contact" class="section section-contact">
+  <div class="contact-inner">
+    <p class="section-tag">part 5 — say hi</p>
+    <h2 class="section-title">want to help build it?</h2>
+    <p class="lede lede-center">
+      got money, land, aircraft, ideas, or just think this is cool? let's chat.
+    </p>
+
+    <div class="contact-buttons">
+      <a href="mailto:hello@pbskydiving.com" class="btn btn-primary btn-big">hello@pbskydiving.com</a>
+      <a href="https://instagram.com/pbskydiving" class="btn btn-ghost btn-big">@pbskydiving</a>
+    </div>
+
+    <p class="fine">
+      "but pavel where the fuck are you gonna get the money from??" — sba loans max at $5.5m. haven't done all the math. pretty sure we'll be chillin.
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-main">PB Skydiving — still a dream · coming soon-ish</p>
+    <p class="footer-sub">drawn in crayon · hosted locally · © 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
