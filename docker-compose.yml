@@ -2,7 +2,12 @@ services:
   web:
     build: .
     image: pbskydiving:latest
-    container_name: pbskydiving
-    ports:
-      - "8080:80"
     restart: unless-stopped
+    expose:
+      - "80"
+    networks:
+      - dokploy-network
+
+networks:
+  dokploy-network:
+    external: true
